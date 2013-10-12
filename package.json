@@ -1,6 +1,6 @@
 {
   "name": "jshint-stylish",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Stylish reporter for JSHint",
   "keywords": [
     "jshint",
