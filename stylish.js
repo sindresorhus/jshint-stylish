@@ -9,6 +9,8 @@ module.exports = {
 		var headers = [];
 		var prevfile;
 
+		options = options || {};
+
 		ret += table(
 			result.map(function (el, i) {
 				var err = el.error;
