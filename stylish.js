@@ -8,6 +8,8 @@ module.exports = {
 		var ret = '';
 		var headers = [];
 		var prevfile;
+		
+		options = options || {};
 
 		ret += table(
 			result.map(function (el, i) {
