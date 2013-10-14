@@ -11,29 +11,27 @@ module.exports = {
 
 		options = options || {};
 
-		ret += table(
-			result.map(function (el, i) {
-				var err = el.error;
-				var line = [
-					'',
-					chalk.gray('line ' + err.line),
-					chalk.gray('col ' + err.character),
-					chalk.blue(err.reason)
-				];
+		ret += table(result.map(function (el, i) {
+			var err = el.error;
+			var line = [
+				'',
+				chalk.gray('line ' + err.line),
+				chalk.gray('col ' + err.character),
+				chalk.blue(err.reason)
+			];
 
-				if (el.file !== prevfile) {
-					headers[i] = el.file;
-				}
+			if (el.file !== prevfile) {
+				headers[i] = el.file;
+			}
 
-				if (options.verbose) {
-					line.push(chalk.gray('(' + err.code + ')'));
-				}
+			if (options.verbose) {
+				line.push(chalk.gray('(' + err.code + ')'));
+			}
 
-				prevfile = el.file;
+			prevfile = el.file;
 
-				return line;
-			})
-		).split('\n').map(function (el, i) {
+			return line;
+		})).split('\n').map(function (el, i) {
 			return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + el : el;
 		}).join('\n') + '\n\n';
 
