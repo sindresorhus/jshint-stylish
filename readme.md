@@ -28,7 +28,7 @@ jshint --reporter node_modules/jshint-stylish/stylish.js file.js
 grunt.initConfig({
 	jshint: {
 		options: {
-			reporter: 'node_modules/jshint-stylish/stylish.js'
+			reporter: require('jshint-stylish')
 		},
 		target: ['file.js']
 	}

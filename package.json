@@ -21,7 +21,6 @@
   "files": [
     "stylish.js"
   ],
-  "main": "stylish",
   "repository": {
     "type": "git",
     "url": "git://github.com/sindresorhus/jshint-stylish.git"
