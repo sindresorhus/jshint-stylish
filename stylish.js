@@ -36,11 +36,12 @@ module.exports = {
 		}).join('\n') + '\n\n';
 
 		if (total > 0) {
-			ret += chalk.red.bold('✖ ' + total + ' problem' + (total === 1 ? '' : 's') + '\n');
+			ret += chalk.red.bold('✖ ' + total + ' problem' + (total === 1 ? '' : 's'));
 		} else {
-			ret += chalk.green.bold('✔ No problems\n');
+			ret += chalk.green.bold('✔ No problems');
+			ret = '\n' + ret.trim();
 		}
 
-		console.log(ret);
+		console.log(ret + '\n');
 	}
 };
