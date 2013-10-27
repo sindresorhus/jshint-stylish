@@ -4,7 +4,9 @@
 
 ![screenshot](screenshot.png)
 
-*Compared to the [default reporter](screenshot-default-formatter.png).*
+Compared to the default reporter:
+
+![default reporter](screenshot-default-formatter.png)
 
 
 ## Install
