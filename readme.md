@@ -24,6 +24,16 @@ Use it with:
 jshint --reporter node_modules/jshint-stylish/stylish.js file.js
 ```
 
+#### [gulp-jshint](https://github.com/wearefractal/gulp-jshint)
+
+```js
+gulp.task('default', function () {
+	gulp.src(['file.js'])
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter('jshint-stylish'));
+});
+```
+
 #### [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 
 ```js
