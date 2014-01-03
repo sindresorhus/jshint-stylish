@@ -1,6 +1,6 @@
 {
   "name": "jshint-stylish",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Stylish reporter for JSHint",
   "license": "MIT",
   "repository": "sindresorhus/jshint-stylish",
