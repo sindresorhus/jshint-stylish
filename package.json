@@ -2,6 +2,23 @@
   "name": "jshint-stylish",
   "version": "0.1.4",
   "description": "Stylish reporter for JSHint",
+  "license": "MIT",
+  "repository": "sindresorhus/jshint-stylish",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "stylish.js"
+  ],
   "keywords": [
     "jshint",
     "reporter",
@@ -10,34 +27,12 @@
     "stylish",
     "elegant"
   ],
-  "homepage": "https://github.com/sindresorhus/jshint-stylish",
-  "bugs": "https://github.com/sindresorhus/jshint-stylish/issues",
-  "license": "MIT",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
-  },
-  "files": [
-    "index.js",
-    "stylish.js"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/sindresorhus/jshint-stylish.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
   "dependencies": {
-    "chalk": "~0.2.1",
+    "chalk": "~0.4.0",
     "text-table": "~0.2.0"
   },
   "devDependencies": {
-    "mocha": "~1.13.0",
-    "jshint": "~2.1.11"
-  },
-  "engines": {
-    "node": ">=0.8.0"
+    "mocha": "*",
+    "jshint": "~2"
   }
 }
