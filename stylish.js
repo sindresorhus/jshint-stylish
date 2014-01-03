@@ -31,7 +31,11 @@ module.exports = {
 			prevfile = el.file;
 
 			return line;
-		})).split('\n').map(function (el, i) {
+		}), {
+			stringLength: function (str) {
+				return chalk.stripColor(str).length;
+			}
+		}).split('\n').map(function (el, i) {
 			return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + el : el;
 		}).join('\n') + '\n\n';
 
