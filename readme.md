@@ -1,4 +1,4 @@
-# jshint-stylish [![Build Status](https://secure.travis-ci.org/sindresorhus/jshint-stylish.png?branch=master)](http://travis-ci.org/sindresorhus/jshint-stylish)
+# jshint-stylish [![Build Status](https://travis-ci.org/sindresorhus/jshint-stylish.svg?branch=master)](https://travis-ci.org/sindresorhus/jshint-stylish)
 
 > Stylish reporter for [JSHint](https://github.com/jshint/jshint)
 
@@ -11,7 +11,9 @@ Compared to the default reporter:
 
 ## Install
 
-Install with [npm](https://npmjs.org/package/jshint-stylish): `npm install --save-dev jshint-stylish`
+```bash
+$ npm install --save-dev jshint-stylish
+```
 
 
 ## Getting started
@@ -53,4 +55,4 @@ grunt.registerTask('default', ['jshint']);
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
