@@ -13,11 +13,14 @@ module.exports = {
 
 		ret += table(result.map(function (el, i) {
 			var err = el.error;
+			// E: Error, W: Warning, I: Info
+			var isError = err.code && err.code[0] === 'E';
+
 			var line = [
 				'',
 				chalk.gray('line ' + err.line),
 				chalk.gray('col ' + err.character),
-				chalk.blue(err.reason)
+				isError ? chalk.red(err.reason) : chalk.blue(err.reason)
 			];
 
 			if (el.file !== prevfile) {
