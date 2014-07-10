@@ -1,6 +1,7 @@
 'use strict';
 var chalk = require('chalk');
 var table = require('text-table');
+var logSymbols = require('log-symbols');
 
 module.exports = {
 	reporter: function (result, config, options) {
@@ -43,9 +44,9 @@ module.exports = {
 		}).join('\n') + '\n\n';
 
 		if (total > 0) {
-			ret += chalk.red((process.platform !== 'win32' ? '✖ ' : '') + total + ' problem' + (total === 1 ? '' : 's'));
+			ret += logSymbols.error + ' ' + total + ' problem' + (total === 1 ? '' : 's');
 		} else {
-			ret += chalk.green((process.platform !== 'win32' ? '✔ ' : '') + 'No problems');
+			ret += logSymbols.success + ' No problems';
 			ret = '\n' + ret.trim();
 		}
 
