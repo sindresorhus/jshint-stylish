@@ -30,6 +30,7 @@
   "dependencies": {
     "chalk": "^0.5.1",
     "log-symbols": "^1.0.0",
+    "string-length": "^1.0.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {

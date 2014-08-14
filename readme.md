@@ -11,19 +11,19 @@ Compared to the default reporter:
 
 ## Install
 
-```bash
+```sh
 $ npm install --save-dev jshint-stylish
 ```
 
 
-## Getting started
+## Usage
 
 Use it with:
 
 #### JSHint CLI
 
-```
-jshint --reporter node_modules/jshint-stylish/stylish.js file.js
+```sh
+$ jshint --reporter node_modules/jshint-stylish/stylish.js file.js
 ```
 
 #### [gulp-jshint](https://github.com/wearefractal/gulp-jshint)
@@ -55,4 +55,4 @@ grunt.registerTask('default', ['jshint']);
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

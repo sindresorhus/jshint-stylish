@@ -2,6 +2,7 @@
 var chalk = require('chalk');
 var table = require('text-table');
 var logSymbols = require('log-symbols');
+var stringLength = require('string-length');
 
 module.exports = {
 	reporter: function (result, config, options) {
@@ -36,9 +37,7 @@ module.exports = {
 
 			return line;
 		}), {
-			stringLength: function (str) {
-				return chalk.stripColor(str).length;
-			}
+			stringLength: stringLength
 		}).split('\n').map(function (el, i) {
 			return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + el : el;
 		}).join('\n') + '\n\n';
