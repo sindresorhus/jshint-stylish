@@ -9,9 +9,8 @@ module.exports = {
 		var ret = '';
 		var headers = [];
 		var prevfile;
-		var symbol = logSymbols.warning;
-		var problemType = ' warning';
-		var hasError = false;
+		var errorCount = 0;
+		var warningCount = 0;
 
 		options = options || {};
 
@@ -36,7 +35,10 @@ module.exports = {
 			}
 
 			if (isError) {
-				hasError = true;
+				errorCount++;
+			}
+			else {
+				warningCount++;
 			}
 
 			prevfile = el.file;
@@ -51,11 +53,10 @@ module.exports = {
 		}).join('\n') + '\n\n';
 
 		if (total > 0) {
-			if (hasError) {
-				symbol = logSymbols.error;
-				problemType = ' error';
+			if (errorCount > 0) {
+				ret += '  ' + logSymbols.error + '  ' + errorCount + ' errors' + (total === 1 ? '' : 's') + (warningCount > 0 ? '\n' : '');
 			}
-			ret += '  ' + symbol + '  ' + total + problemType + (total === 1 ? '' : 's');
+			ret += '  ' + logSymbols.warning + '  ' + warningCount + ' warning' + (total === 1 ? '' : 's');
 		} else {
 			ret += '  ' + logSymbols.success + ' No problems';
 			ret = '\n' + ret.trim();
