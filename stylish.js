@@ -4,6 +4,7 @@ var table = require('text-table');
 var logSymbols = require('log-symbols');
 
 module.exports = {
+
 	reporter: function (result, config, options) {
 		var total = result.length;
 		var ret = '';
@@ -11,6 +12,10 @@ module.exports = {
 		var prevfile;
 		var errorCount = 0;
 		var warningCount = 0;
+
+		function plural (what, count) {
+			return what + (count === 1 ? '' : 's');
+		}
 
 		options = options || {};
 
@@ -54,9 +59,9 @@ module.exports = {
 
 		if (total > 0) {
 			if (errorCount > 0) {
-				ret += '  ' + logSymbols.error + '  ' + errorCount + ' errors' + (total === 1 ? '' : 's') + (warningCount > 0 ? '\n' : '');
+				ret += '  ' + logSymbols.error + '  ' + errorCount + plural(' error', errorCount) + (warningCount > 0 ? '\n' : '');
 			}
-			ret += '  ' + logSymbols.warning + '  ' + warningCount + ' warning' + (total === 1 ? '' : 's');
+			ret += '  ' + logSymbols.warning + '  ' + warningCount + plural(' warning', total);
 		} else {
 			ret += '  ' + logSymbols.success + ' No problems';
 			ret = '\n' + ret.trim();
