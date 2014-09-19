@@ -18,15 +18,13 @@ $ npm install --save-dev jshint-stylish
 
 ## Usage
 
-Use it with:
-
-#### JSHint CLI
+### JSHint CLI
 
 ```sh
 $ jshint --reporter node_modules/jshint-stylish/stylish.js file.js
 ```
 
-#### [gulp-jshint](https://github.com/wearefractal/gulp-jshint)
+### [gulp-jshint](https://github.com/wearefractal/gulp-jshint)
 
 ```js
 gulp.task('default', function () {
@@ -36,7 +34,7 @@ gulp.task('default', function () {
 });
 ```
 
-#### [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
+### [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 
 ```js
 grunt.initConfig({

@@ -11,13 +11,13 @@ it('should be used by JSHint', function () {
 	process.stdout.write = function (str) {
 		_log(str);
 
-		if (/'it' is not defined/ig.test(chalk.stripColor(str || ''))) {
+		if (/'foo' is defined/ig.test(chalk.stripColor(str || ''))) {
 			ret = true;
 		}
 	};
 
 	jshint({
-		args: ['test.js'],
+		args: ['fixture.js'],
 		reporter: reporter
 	});
 
