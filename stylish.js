@@ -5,11 +5,18 @@ var logSymbols = require('log-symbols');
 var stringLength = require('string-length');
 
 module.exports = {
+
 	reporter: function (result, config, options) {
 		var total = result.length;
 		var ret = '';
 		var headers = [];
 		var prevfile;
+		var errorCount = 0;
+		var warningCount = 0;
+
+		function plural (what, count) {
+			return what + (count === 1 ? '' : 's');
+		}
 
 		options = options || {};
 
@@ -33,6 +40,13 @@ module.exports = {
 				line.push(chalk.gray('(' + err.code + ')'));
 			}
 
+			if (isError) {
+				errorCount++;
+			}
+			else {
+				warningCount++;
+			}
+
 			prevfile = el.file;
 
 			return line;
@@ -43,9 +57,12 @@ module.exports = {
 		}).join('\n') + '\n\n';
 
 		if (total > 0) {
-			ret += logSymbols.error + ' ' + total + ' problem' + (total === 1 ? '' : 's');
+			if (errorCount > 0) {
+				ret += '  ' + logSymbols.error + '  ' + errorCount + plural(' error', errorCount) + (warningCount > 0 ? '\n' : '');
+			}
+			ret += '  ' + logSymbols.warning + '  ' + warningCount + plural(' warning', total);
 		} else {
-			ret += logSymbols.success + ' No problems';
+			ret += '  ' + logSymbols.success + ' No problems';
 			ret = '\n' + ret.trim();
 		}
 
