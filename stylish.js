@@ -9,6 +9,9 @@ function pluralize(str, count) {
 }
 
 module.exports = {
+	toString: function () {
+		return __filename;
+	},
 	reporter: function (result, config, options) {
 		var total = result.length;
 		var ret = '';
