@@ -7,7 +7,7 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -22,10 +22,13 @@
   "keywords": [
     "jshint",
     "reporter",
+    "formatter",
+    "format",
     "lint",
     "validate",
     "stylish",
-    "elegant"
+    "elegant",
+    "pretty"
   ],
   "dependencies": {
     "chalk": "^1.0.0",

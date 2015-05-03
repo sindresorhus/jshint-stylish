@@ -2,16 +2,16 @@
 
 > Stylish reporter for [JSHint](https://github.com/jshint/jshint)
 
-![screenshot](screenshot.png)
+![](screenshot.png)
 
 Compared to the default reporter:
 
-![default reporter](screenshot-default-formatter.png)
+![](screenshot-default-formatter.png)
 
 
 ## Install
 
-```sh
+```
 $ npm install --save-dev jshint-stylish
 ```
 
@@ -20,7 +20,7 @@ $ npm install --save-dev jshint-stylish
 
 ### JSHint CLI
 
-```sh
+```
 $ jshint --reporter node_modules/jshint-stylish/stylish.js file.js
 ```
 
