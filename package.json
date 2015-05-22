@@ -3,7 +3,6 @@
   "version": "1.0.2",
   "description": "Stylish reporter for JSHint",
   "license": "MIT",
-  "main": "stylish",
   "repository": "sindresorhus/jshint-stylish",
   "author": {
     "name": "Sindre Sorhus",
@@ -17,7 +16,7 @@
     "test": "mocha"
   },
   "files": [
-    "stylish.js"
+    "index.js"
   ],
   "keywords": [
     "jshint",
