@@ -2,7 +2,7 @@
 var assert = require('assert');
 var chalk = require('chalk');
 var jshint = require('jshint/src/cli').run;
-var reporter = require('./stylish').reporter;
+var reporter = require('./index').reporter;
 
 it('should be used by JSHint', function () {
 	var ret = false;

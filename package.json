@@ -16,8 +16,7 @@
     "test": "mocha"
   },
   "files": [
-    "index.js",
-    "stylish.js"
+    "index.js"
   ],
   "keywords": [
     "jshint",
