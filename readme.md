@@ -21,10 +21,10 @@ $ npm install --save-dev jshint-stylish
 ### JSHint CLI
 
 ```
-$ jshint --reporter node_modules/jshint-stylish/stylish.js file.js
+$ jshint --reporter=node_modules/jshint-stylish file.js
 ```
 
-### [gulp-jshint](https://github.com/wearefractal/gulp-jshint)
+### [gulp-jshint](https://github.com/spalger/gulp-jshint)
 
 ```js
 gulp.task('default', function () {

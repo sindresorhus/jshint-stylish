@@ -1,8 +1,8 @@
 'use strict';
 var assert = require('assert');
 var chalk = require('chalk');
-var jshint = require('jshint/src/cli').run;
-var reporter = require('./index').reporter;
+var jshint = require('jshint/src/cli');
+var stylish = require('./');
 
 it('should be used by JSHint', function () {
 	var ret = false;
@@ -16,9 +16,9 @@ it('should be used by JSHint', function () {
 		}
 	};
 
-	jshint({
+	jshint.run({
 		args: ['fixture.js'],
-		reporter: reporter
+		reporter: stylish.reporter
 	});
 
 	process.stdout.write = _log;
