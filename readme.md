@@ -30,7 +30,7 @@ $ jshint --reporter=node_modules/jshint-stylish file.js
 gulp.task('default', function () {
 	gulp.src(['file.js'])
 		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('jshint-stylish'));
+		.pipe(jshint.reporter('jshint-stylish', {verbose: true}));
 });
 ```
 
@@ -50,6 +50,16 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.registerTask('default', ['jshint']);
 ```
 
+### Options
+- `color`
+    Default is `'blue'`, but it can be anything supported by [chalk](https://github.com/sindresorhus/chalk).
+    On terminals with dark gray background, `{color:'green'}` would likely
+    appear somewhat friendlier than blue.
+- `sort`
+    Sorts the output by lines and columns; default is `true`.
+- `verbose`
+    Makes the menacing jshint code like `(W106)` to appear after the message.
+    Default is `false`.
 
 ## License
 
