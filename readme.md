@@ -6,7 +6,7 @@
 
 Compared to the default reporter:
 
-![](screenshot-default-formatter.png)
+![](screenshot-default-reporter.png)
 
 
 ## Install
