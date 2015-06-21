@@ -32,6 +32,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "log-symbols": "^1.0.0",
+    "plur": "^1.0.0",
     "string-length": "^1.0.0",
     "text-table": "^0.2.0"
   },

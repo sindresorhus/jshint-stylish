@@ -3,10 +3,7 @@ var chalk = require('chalk');
 var table = require('text-table');
 var logSymbols = require('log-symbols');
 var stringLength = require('string-length');
-
-function pluralize(str, count) {
-	return str + (count === 1 ? '' : 's');
-}
+var plur = require('plur');
 
 module.exports = {
 	toString: function () {
@@ -59,10 +56,10 @@ module.exports = {
 
 		if (total > 0) {
 			if (errorCount > 0) {
-				ret += '  ' + logSymbols.error + '  ' + errorCount + pluralize(' error', errorCount) + (warningCount > 0 ? '\n' : '');
+				ret += '  ' + logSymbols.error + '  ' + errorCount + ' ' + plur('error', errorCount) + (warningCount > 0 ? '\n' : '');
 			}
 
-			ret += '  ' + logSymbols.warning + '  ' + warningCount + pluralize(' warning', total);
+			ret += '  ' + logSymbols.warning + '  ' + warningCount + ' ' + plur('warning', total);
 		} else {
 			ret += '  ' + logSymbols.success + ' No problems';
 			ret = '\n' + ret.trim();
