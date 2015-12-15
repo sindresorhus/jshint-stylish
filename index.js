@@ -28,7 +28,7 @@ module.exports = {
 				'',
 				chalk.gray('line ' + err.line),
 				chalk.gray('col ' + err.character),
-				isError ? chalk.red(err.reason) : chalk.blue(err.reason)
+				isError ? chalk.red(err.reason) : chalk.cyan(err.reason)
 			];
 
 			if (el.file !== prevfile) {
