@@ -34,7 +34,8 @@
     "log-symbols": "^1.0.0",
     "plur": "^2.1.0",
     "string-length": "^1.0.0",
-    "text-table": "^0.2.0"
+    "text-table": "^0.2.0",
+    "beepbeep": "^1.2.0"
   },
   "devDependencies": {
     "mocha": "*",
