@@ -4,7 +4,7 @@ var table = require('text-table');
 var logSymbols = require('log-symbols');
 var stringLength = require('string-length');
 var plur = require('plur');
-var beep = require('beepbeep');
+var beeper = require('beeper');
 
 module.exports = {
 	toString: function () {
@@ -63,7 +63,7 @@ module.exports = {
 			ret += '  ' + logSymbols.warning + '  ' + warningCount + ' ' + plur('warning', total);
 
 			if (options.beep) {
-				beep();
+				beeper();
 			}
 		} else {
 			ret += '  ' + logSymbols.success + ' No problems';
