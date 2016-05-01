@@ -27,11 +27,11 @@ $ jshint --reporter=node_modules/jshint-stylish file.js
 ### [gulp-jshint](https://github.com/spalger/gulp-jshint)
 
 ```js
-gulp.task('default', function () {
+gulp.task('default', () =>
 	gulp.src(['file.js'])
 		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('jshint-stylish'));
-});
+		.pipe(jshint.reporter('jshint-stylish'))
+);
 ```
 
 ### [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
@@ -50,25 +50,27 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.registerTask('default', ['jshint']);
 ```
 
-### Options
 
-#### options.beep
+## Options
 
-Type: `boolean`
+#### beep
+
+Type: `boolean`<br>
 Default: `false`
 
-If set to true, the system bell will sound whenever a warning or error is output.
+The system bell will make a sound if there were any warnings or errors.
 
-Gulp example:
+###### Gulp example
+
 ```js
-gulp.task('default', function () {
+gulp.task('default', () =>
 	gulp.src(['file.js'])
 		.pipe(jshint('.jshintrc'))
-		.pipe(jshint.reporter('jshint-stylish', {beep: true}));
-});
+		.pipe(jshint.reporter('jshint-stylish', {beep: true}))
+);
 ```
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

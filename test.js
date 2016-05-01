@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-env mocha */
 var assert = require('assert');
 var chalk = require('chalk');
 var jshint = require('jshint/src/cli');
@@ -11,7 +12,7 @@ it('should be used by JSHint', function () {
 	process.stdout.write = function (str) {
 		_log(str);
 
-		if (/'foo' is defined/ig.test(chalk.stripColor(str || ''))) {
+		if (/Missing semicolon/ig.test(chalk.stripColor(str || ''))) {
 			ret = true;
 		}
 	};
