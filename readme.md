@@ -56,6 +56,24 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.registerTask('default', ['jshint']);
 ```
 
+### Options
+
+#### options.beep
+
+Type: `boolean`
+Default: `false`
+
+If set to true, the system bell will sound whenever a warning or error is output.
+
+Gulp example:
+```js
+gulp.task('default', function () {
+	gulp.src(['file.js'])
+		.pipe(jshint('.jshintrc'))
+		.pipe(jshint.reporter('jshint-stylish', {beep: true}));
+});
+```
+
 
 ## Options
 
