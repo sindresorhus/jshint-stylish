@@ -66,6 +66,14 @@ Default: `false`
 
 The system bell will make a sound if there were any warnings or errors.
 
+#### errorsOnly
+
+Type: `boolean`<br>
+Default: `false`
+
+Prints only those jshint messages, marked as errors (E*)
+
+
 ###### Gulp example
 
 ```js

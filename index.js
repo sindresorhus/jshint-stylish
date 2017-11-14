@@ -20,56 +20,68 @@ module.exports = {
 
 		options = options || {};
 
-		ret += table(result.map(function (el, i) {
-			var err = el.error;
-			// E: Error, W: Warning, I: Info
-			var isError = err.code && err.code[0] === 'E';
-
-			var line = [
-				'',
-				chalk.gray('line ' + err.line),
-				chalk.gray('col ' + err.character),
-				isError ? chalk.red(err.reason) : chalk.blue(err.reason)
-			];
-
-			if (el.file !== prevfile) {
-				headers[i] = el.file;
-			}
-
-			if (options.verbose) {
-				line.push(chalk.gray('(' + err.code + ')'));
-			}
-
-			if (isError) {
-				errorCount++;
-			} else {
-				warningCount++;
-			}
-
-			prevfile = el.file;
-
-			return line;
-		}), {
-			stringLength: stringLength
-		}).split('\n').map(function (el, i) {
-			return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + el : el;
-		}).join('\n') + '\n\n';
-
-		if (total > 0) {
-			if (errorCount > 0) {
-				ret += '  ' + logSymbols.error + '  ' + errorCount + ' ' + plur('error', errorCount) + (warningCount > 0 ? '\n' : '');
-			}
-
-			ret += '  ' + logSymbols.warning + '  ' + warningCount + ' ' + plur('warning', total);
-
-			if (options.beep) {
-				beeper();
-			}
-		} else {
-			ret += '  ' + logSymbols.success + ' No problems';
-			ret = '\n' + ret.trim();
+		if (options.errorsOnly) {
+			var result = result.filter(function(el, i) {
+				var err = el.error;
+				// E: Error, W: Warning, I: Info
+				var isError = err.code && err.code[0] === 'E';
+				return ((options.errorsOnly && isError) || !options.errorsOnly);
+			});
 		}
 
-		console.log(ret + '\n');
+		if (result.length > 0) {
+			ret += table(result.map(function (el, i) {
+				var err = el.error;
+				// E: Error, W: Warning, I: Info
+				var isError = err.code && err.code[0] === 'E';
+
+				var line = [
+					'',
+					chalk.gray('line ' + err.line),
+					chalk.gray('col ' + err.character),
+					isError ? chalk.red(err.reason) : chalk.blue(err.reason)
+				];
+
+				if (el.file !== prevfile) {
+					headers[i] = el.file;
+				}
+
+				if (options.verbose) {
+					line.push(chalk.gray('(' + err.code + ')'));
+				}
+
+				if (isError) {
+					errorCount++;
+				} else {
+					warningCount++;
+				}
+
+				prevfile = el.file;
+
+				return line;
+			}), {
+				stringLength: stringLength
+			}).split('\n').map(function (el, i) {
+				return headers[i] ? '\n' + chalk.underline(headers[i]) + '\n' + el : el;
+			}).join('\n') + '\n\n';
+
+			if (total > 0) {
+				if (errorCount > 0) {
+					ret += '  ' + logSymbols.error + '  ' + errorCount + ' ' +
+					plur('error', errorCount) + (warningCount > 0 ? '\n' : '');
+				}
+
+				ret += '  ' + logSymbols.warning + '  ' + warningCount + ' ' + plur('warning', total);
+
+				if (options.beep) {
+					beeper();
+				}
+			} else {
+				ret += '  ' + logSymbols.success + ' No problems';
+				ret = '\n' + ret.trim();
+			}
+
+			console.log(ret + '\n');
+		}
 	}
 };
