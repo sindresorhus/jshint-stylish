@@ -1,4 +1,4 @@
-# jshint-stylish [![Build Status](https://travis-ci.org/sindresorhus/jshint-stylish.svg?branch=master)](https://travis-ci.org/sindresorhus/jshint-stylish)
+# jshint-stylish
 
 > Stylish reporter for [JSHint](https://github.com/jshint/jshint)
 
